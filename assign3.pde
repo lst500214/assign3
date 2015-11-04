@@ -2,13 +2,11 @@
   final int GAME_START = 0;
   final int GAME_RUN = 1;
   final int GAME_LOSE = 2;
-  
   final int PART1 = 0;
   final int PART2 = 1;
   final int PART3 = 2;
 
-  
-  float x=0, y=0, x1=width-250, x2=width-250, x3=width-250, y3=0, y4=0;
+  float x=0, y=0, x1=width-250, x2=width-250, x3=width-250;
   float treasureX, treasureY;
   float percentage, hpWeightX, hpWeightY; 
   float enemyX, enemyY, enemyY2, enemyY3;
@@ -153,8 +151,8 @@ void draw() {
       
       //part 1: a line of 5 enemys 
       for(int i=0; i<5; i++){
-        float x = x1+spacingX*i;
-        image(enemy, x, enemyY);
+        float part1_x = x1+spacingX*i;
+        image(enemy, part1_x, enemyY);
         //println("X position = "+x);
       } 
       
@@ -165,7 +163,6 @@ void draw() {
       }
       
        x1+=speed;
-       
        break;
       
       //part 2: lineslash enemys
@@ -174,9 +171,9 @@ void draw() {
       for(int j=0; j<5; j++){
         
         int lineCount = 4-j;
-        float x = x2+spacingX*j;
-        float y = enemyY2+spacingY*lineCount;
-        image(enemy, x, y);
+        float part2_x = x2+spacingX*j;
+        float part2_y = enemyY2+spacingY*lineCount;
+        image(enemy, part2_x, part2_y);
       }
       
       if(x2 >= width){
@@ -188,24 +185,23 @@ void draw() {
       x2+=speed;
       
       break;
+      
       //part 3: a square enemys
-      
-      
       case PART3:
       for(int g=0; g<5; g++){
         
         int Count = abs(2-g);
         
         //upperEnemys
-        float x = x3+spacingX*g;
-        float y = enemyY3+spacingY*Count;
-        image(enemy, x, y);
+        float part3_x = x3+spacingX*g;
+        float part3_y = enemyY3+spacingY*Count;
+        image(enemy, part3_x, part3_y);
         
         //downEnemeys
         float enemyY4 = enemyY3+spacingY*4;
-        float x1 = x3+spacingX*g;
-        float y1 = enemyY4-spacingY*Count; 
-        image(enemy, x1, y1);
+        float part3_x2 = x3+spacingX*g;
+        float part3_y2 = enemyY4-spacingY*Count; 
+        image(enemy, part3_x2, part3_y2);
       }
       
       if(x3 >= width){
