@@ -157,9 +157,9 @@ void draw() {
       } 
       
       if(x1 >= width){
-        enemyPart = PART2;
         x2=-250;
         enemyY2 = random(40, 219);
+        enemyPart = PART2;
       }
       
        x1+=speed;
@@ -177,9 +177,9 @@ void draw() {
       }
       
       if(x2 >= width){
-        enemyPart = PART3;
         x3=-250;
         enemyY3 = random(40, 219);
+        enemyPart = PART3; 
       }
       
       x2+=speed;
@@ -205,9 +205,10 @@ void draw() {
       }
       
       if(x3 >= width){
-        enemyPart = PART1;
         x1=-250;
         enemyY = random(40, 219);
+        enemyPart = PART1;
+        
       }
       
       x3+=speed;
